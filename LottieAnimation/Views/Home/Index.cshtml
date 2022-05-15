@@ -1,0 +1,18 @@
+﻿@inject IHttpContextAccessor _httpContext
+@{
+    ViewData["Title"] = "Home Page";
+    var baseUrl = $"{_httpContext.HttpContext.Request.Scheme}://{_httpContext.HttpContext.Request.Host.ToUriComponent()}";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To CodeCell.ir</h1>
+     <lottie-player src="@(baseUrl)/72874-user-profile-v2.json"
+                                   background="transparent" speed="1"
+                                   style="max-width: 500px; max-height: 500px;"
+                                   loop autoplay>
+      </lottie-player>
+</div>
+
+@section Scripts{
+     <script src="https://unpkg.com/@@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+}
